@@ -1,4 +1,4 @@
-const WEDDING_DATE = new Date("2026-09-06T10:00:00+07:00").getTime();
+const WEDDING_DATE = new Date("2026-09-06T09:00:00+07:00").getTime();
 const guestNameEl=document.getElementById("guestName");
 const wNameInput=document.getElementById("wName");
 const guestPopup=document.getElementById("guestPopup");
@@ -97,7 +97,7 @@ function playMusic(){
   if(p && p.catch) p.catch(()=>{ /* autoplay blocked */ });
   musicOn=true;
   if(musicBtn){ musicBtn.classList.remove("muted"); musicBtn.classList.add("playing"); musicBtn.textContent="♫"; }
-  let v=0; const target=0.45; const step=0.03;
+  let v=0; const target=0.70; const step=0.03;
   const iv=setInterval(()=>{
     v=Math.min(v+step, target);
     try{ bgMusic.volume=v; }catch{}
@@ -234,7 +234,7 @@ function fallbackCopy(text, btn){
 }
 
 // Wishes — tanpa backend (localStorage)
-const WISH_KEY="wishes_salim_sitta";
+const WISH_KEY="wishes_Sitta_Salim";
 const wishesForm=document.getElementById("wishes-form"), wishesList=document.getElementById("wishes-list"), wishesEmpty=document.getElementById("wishes-empty"), wName=document.getElementById("wName"), wMessage=document.getElementById("wMessage"), wishesStatus=document.getElementById("wishes-status");
 function escapeHtml(s){ return s.replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
 function formatTime(ts){
@@ -258,7 +258,7 @@ function loadWishes(){
     if(raw){ const arr=JSON.parse(raw); if(Array.isArray(arr)) return arr; }
   }catch{}
   return [
-    {name:"Ayu & Keluarga", message:"Selamat Salim & sitta! Samawa sampai akhir hayat ♡", time: Date.now()-86400000*2},
+    {name:"Ayu & Keluarga", message:"Selamat Sitta & Salim! Samawa sampai akhir hayat ♡", time: Date.now()-86400000*2},
     {name:"Riko", message:"Bahagia selalu! Semoga acaranya lancar & penuh cinta.", time: Date.now()-86400000}
   ];
 }
